@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
-const SECRET_KEY = "Vineet12243247bidbchvdsuvcheg78g"
-const generateWebToken = (id)=>{
-    return jwt.sign({id}, SECRET_KEY, {
-        expiresIn:'30m'
-    })
-}
+const jwt = require('jsonwebtoken')
 
-module.exports = generateWebToken;
+const generateToken = (id) =>{
+    return jwt.sign({id}, process.env.JWT_SECRET,{
+        expiresIn:'5m'
+    })
+    
+}
+module.exports = generateToken;

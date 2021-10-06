@@ -1,10 +1,11 @@
 const express = require('express');
 const { registerUser, loginUser, users, userSearch, usersSelection } = require('../controller/userController');
+const jwtVeify = require('../middleware/auth');
 
 const router = express.Router();
 
-router.route('/').get((req,res)=>{
-    res.send('welcome')
+router.route('/').get(jwtVeify,(req,res)=>{
+    res.send('Welcome User! Your Token Is Validates Successfully')
 })
 
 router.route('/register').post(registerUser);

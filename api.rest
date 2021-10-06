@@ -1,4 +1,4 @@
-GET http://localhost:8000/ HTTP/1.1
+# GET http://localhost:8000/ HTTP/1.1
 
 ###
 
@@ -21,3 +21,8 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:8000/users/name/:dheeraj
+
+###
+GET http://localhost:8000/token
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNWQ4YzM0OWNjMWNkZTM2Yjg2MWJiYSIsImlhdCI6MTYzMzUyMjcxMCwiZXhwIjoxNjMzNTIzMDEwfQ.rGRGN28mUcgBqWYwgHBOpRHTyIzE1oLnL2oPIVFR0r8
