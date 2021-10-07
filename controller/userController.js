@@ -2,7 +2,7 @@ const User = require("../model/userModel");
 const generateWebToken = require("../util/generateToken");
 
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, role } = req.body;
   const userExist = await User.findOne({ email });
 
   if (userExist) {
@@ -14,12 +14,14 @@ const registerUser = async (req, res) => {
     name,
     email,
     password,
+    role,
   });
   if (user) {
     res.status(201).json({
       id: user._id,
       name: user.fullname,
       email: user.email,
+      role:user.role,
       token: generateWebToken(user._id),
     });
   } else {
